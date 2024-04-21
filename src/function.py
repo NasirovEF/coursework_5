@@ -1,7 +1,7 @@
 import psycopg2
 
 
-def create_database(database_name):
+def create_database(database_name: str) -> None:
     """Создание базы данных и таблиц для сохранения данных"""
 
     conn = psycopg2.connect(host='localhost', database='postgres', user='postgres', password='12345')
@@ -40,7 +40,7 @@ def create_database(database_name):
     conn.close()
 
 
-def save_information(database_name, employers_list, vacancies):
+def save_information(database_name: str, employers_list: list, vacancies: list) -> None:
     """Сохранение информации в таблицы из БД"""
 
     conn = psycopg2.connect(host='localhost', database=f'{database_name}', user='postgres', password='12345')
